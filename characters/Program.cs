@@ -6,8 +6,12 @@ namespace characters
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             string characterName = "Pesho";
+            writeLine(characterName);
+        }
+        public static void  writeLine(string name)
+        {
+            Console.WriteLine($"your name is {name}");
         }
     }
 }
