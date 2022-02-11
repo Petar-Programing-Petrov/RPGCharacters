@@ -6,12 +6,13 @@ namespace characters
     {
         static void Main(string[] args)
         {
-            string characterName = "Pesho";
-            writeLine(characterName);
+            BaseWarriorClass myWarrior = new BaseWarriorClass();
+            BaseMageClass myMage = new BaseMageClass();
+            BaseCharacterClass myCharacter = new BaseCharacterClass();
+
+            Console.WriteLine(myMage.Dexterity); 
+            
         }
-        public static void  writeLine(string name)
-        {
-            Console.WriteLine($"your name is {name}");
-        }
+
     }
 }

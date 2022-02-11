@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Exists a Number Higher/1.0.0": {
+        "runtime": {
+          "Exists a Number Higher.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Exists a Number Higher/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

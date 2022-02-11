@@ -8,9 +8,21 @@ namespace characters
 {
     internal class BaseRogueClass : BaseCharacterClass 
     {
-        public void RougueClass()
+        //The Rogue starts on 1st lvl with the Character class named "Rogue" 2 Strenght, 6 Dexterity, 1 Intelligence
+        public void RogueClass()
         {
-            CharacterClass = "Rougue";
+            CharacterClass = "Rogue";
+            Strength = 2;
+            Dexterity = 6;
+            Intelligence = 1;
+        }
+        //When the Rogue level's up he gains for every level up +1 Strength, +4 Dexternity and +1 Intelligence
+        private void levelUp()
+        {
+            Console.WriteLine("Mage leveled up!");
+            this.Strength += 1;
+            this.Dexterity += 4;
+            this.Intelligence += 1;
         }
     }
 }
