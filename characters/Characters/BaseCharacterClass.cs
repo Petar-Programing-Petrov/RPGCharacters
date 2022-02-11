@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace characters
 {
-    internal class BaseCharacterClass
+    abstract class BaseCharacterClass
     {
-        private string characterName;
+        //All Characters will have this fields        
         private string characterClass;
         private string equipment;
         private string armor;
+        private string weapon;
 
-        //Stats primary atributes
+        //Stats or the so called primary atributes
         private int strength;
         private int dexterity;
         private int intelligence;
 
-        public string CharacterName
-        {
-            get { return characterName; }
-            set { characterName = value; }
 
-        }
+        //Using getters and setters so we can set or get this information for all characters        
         public string CharacterClass
         {
             get { return characterClass; }
@@ -36,10 +33,16 @@ namespace characters
             set { equipment = value; }
 
         }
+        
         public string Armor
         {
             get { return armor; }
             set { armor = value; }
+        }
+        public string Weapon
+        {
+            get { return weapon; }
+            set { weapon = value; }
         }
         public int Strength
         {
@@ -56,5 +59,21 @@ namespace characters
             get { return intelligence; }
             set { intelligence = value; }
         }
+
+
+        //All Characters can equip weapon, equip armor, level up. So we make the methods virtual that way we can customise them for each character
+        public virtual void EquipWeapon()
+        {
+            Console.WriteLine("Weapon equiped");
+        }
+        public virtual void EquipArmor()
+        {
+            Console.WriteLine("Armor equiped");
+        }
+        public virtual void LevelUp()
+        {
+            
+        }
+
     }
 }

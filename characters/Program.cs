@@ -6,11 +6,13 @@ namespace characters
     {
         static void Main(string[] args)
         {
-            BaseWarriorClass myWarrior = new BaseWarriorClass();
-            BaseMageClass myMage = new BaseMageClass();
-            BaseCharacterClass myCharacter = new BaseCharacterClass();
+            WarriorClass myWarrioir = new WarriorClass();
+            MageClass myMage = new MageClass();
 
-            Console.WriteLine(myMage.Dexterity); 
+            Console.WriteLine(myMage.CharacterClass); 
+            Console.WriteLine(myWarrioir.CharacterClass); 
+            
+            
             
         }
 
