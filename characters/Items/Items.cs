@@ -17,7 +17,11 @@ namespace characters.Items
             get { return name; }
             set { name = value; }
         }
-        public string EquipSlotIs { get; set; }
+        public string EquipSlotIs 
+        {
+            get { return equipSlotIs; }
+            set { equipSlotIs = value; } 
+        }
         public string RequiredLevel { get; set; }
     }
 }
