@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace characters
 {
-    internal class BaseRangerClass: BaseCharacterClass
+    internal class RangerClass : BaseCharacterClass
     {
         //The Ranger starts with 1st lvl atributes and the character class is set to Ranger
-        public void RangerClass()
+        public RangerClass()
         {
             CharacterClass = "Ranger";
             Strength = 1;
@@ -17,7 +17,7 @@ namespace characters
             Intelligence = 1;
         }
         //When the Ranger level's up he gains for every level up +1 Strength, +5 Dexternity and +1 Intelligence
-        private void levelUp()
+        public override void LevelUp()
         {
             Console.WriteLine("Mage leveled up!");
             this.Strength += 1;

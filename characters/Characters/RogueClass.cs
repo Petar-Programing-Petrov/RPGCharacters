@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace characters
 {
-    internal class BaseRogueClass : BaseCharacterClass 
+    internal class RogueClass : BaseCharacterClass
     {
         //The Rogue starts on 1st lvl with the Character class named "Rogue" 2 Strenght, 6 Dexterity, 1 Intelligence
-        public void RogueClass()
+        public RogueClass()
         {
             CharacterClass = "Rogue";
             Strength = 2;
@@ -17,7 +17,7 @@ namespace characters
             Intelligence = 1;
         }
         //When the Rogue level's up he gains for every level up +1 Strength, +4 Dexternity and +1 Intelligence
-        private void levelUp()
+        public override void LevelUp()
         {
             Console.WriteLine("Mage leveled up!");
             this.Strength += 1;

@@ -3,36 +3,57 @@
   <Class Name="characters.BaseCharacterClass" Collapsed="true">
     <Position X="9.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIACAAEAAgAgAAAAIAAQAAABEAAAAUAAAABAAACA=</HashCode>
-      <FileName>BaseCharacterClass.cs</FileName>
+      <HashCode>AAAAIACAAEAAhAAAAAAAAAQACAREAAgAUAAAABAAACA=</HashCode>
+      <FileName>Characters\BaseCharacterClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="characters.BaseMageClass" Collapsed="true">
     <Position X="13.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>BaseMageClass.cs</FileName>
+      <FileName>Characters\BaseMageClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="characters.BaseRangerClass" Collapsed="true">
     <Position X="11" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>BaseRangerClass.cs</FileName>
+      <FileName>Characters\BaseRangerClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="characters.BaseRogueClass" Collapsed="true">
     <Position X="8.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>BaseRogueClass.cs</FileName>
+      <FileName>Characters\BaseRogueClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="characters.BaseWarriorClass" Collapsed="true">
     <Position X="6" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>BaseWarriorClass.cs</FileName>
+      <FileName>Characters\BaseWarriorClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="characters.Items.Armor.Armor" Collapsed="true">
+    <Position X="20.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Armor\Armor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="characters.Items.Weapons.Weapons" Collapsed="true">
+    <Position X="17.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Weapons\Weapons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="characters.Items.Items" Collapsed="true">
+    <Position X="18.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABAAACAAAAAgAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Items.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

@@ -6,18 +6,24 @@ using System.Threading.Tasks;
 
 namespace characters
 {
-    internal class BaseMageClass : BaseCharacterClass
+    internal class MageClass : BaseCharacterClass
     {
         //The Mage starts with level 1 atributes and the character class is set to "Mage".
-        public void MageClass()
+
+        public MageClass()
         {
             CharacterClass = "Mage";
             Strength = 1;
             Dexterity = 1;
             Intelligence = 8;
         }
+
+
+
+
+
         //When the Mage level's up he gains for every level up +1 Strength, +1 Dexternity and +5 Intelligence
-        private void levelUp()
+         public override void LevelUp()
         {
             Console.WriteLine("Mage leveled up!");
             this.Strength += 1;
