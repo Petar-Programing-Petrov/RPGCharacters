@@ -8,6 +8,14 @@ namespace characters.Items.Armor
 {
     abstract class Armor : Items 
     {
-        
+        //Constructor 
+        public Armor()
+        {
+            
+        }
+
+        //Property
+        public int MyProperty { get; set; }
+
     }
 }
