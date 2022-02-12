@@ -1,4 +1,6 @@
-﻿using System;
+﻿using characters.Items;
+using characters.Items.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ namespace characters
     {
         //All Characters will have this fields        
         private string characterClass;
-        private string equipment;
+        private Dictionary<Item, Weapon> characterEquipment;
         private string armor;
         private string weapon;
 
@@ -27,10 +29,10 @@ namespace characters
             set { characterClass = value; }
 
         }
-        public string Equipment
+        public string CharacterEquipment
         {
-            get { return equipment; }
-            set { equipment = value; }
+            get { return characterEquipment; }
+            set { characterEquipment = value; }
 
         }
         
@@ -62,12 +64,16 @@ namespace characters
 
 
         //All Characters can equip weapon, equip armor, level up. So we make the methods virtual that way we can customise them for each character
-        public virtual void EquipWeapon()
+        //Need to pass Item 
+        public virtual void EquipItem()
         {
-            Console.WriteLine("Weapon equiped");
+            //Need to get item properties and add them to the character Primary atributes and also put them in the characterEquipment
+            Console.WriteLine("Armor equiped");
         }
-        public virtual void EquipArmor()
+        //Using a overload method to equip Items
+        public virtual void EquipItem()
         {
+            //Need to get item properties and add them to the character Primary atributes and also put them in the characterEquipment
             Console.WriteLine("Armor equiped");
         }
         public virtual void LevelUp()

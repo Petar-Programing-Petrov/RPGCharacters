@@ -24,5 +24,18 @@ namespace characters
             this.Dexterity += 4;
             this.Intelligence += 1;
         }
+        public override void EquipItem()
+        {
+            try
+            {
+                //Items we can equip
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"{CharacterClass} can't equip this item");
+                throw;
+            }
+            Console.WriteLine($"{CharacterClass} equiped armor");
+        }
     }
 }

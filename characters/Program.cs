@@ -10,10 +10,12 @@ namespace characters
             MageClass myMage = new MageClass();
 
             Console.WriteLine(myMage.CharacterClass); 
-            Console.WriteLine(myWarrioir.CharacterClass); 
+            Console.WriteLine(myWarrioir.CharacterClass);
+
+            myMage.EquipItem();
+            myWarrioir.EquipItem();
             
-            
-            
+           
         }
 
     }
