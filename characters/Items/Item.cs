@@ -1,4 +1,5 @@
-﻿using System;
+﻿using characters.Items.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,36 +9,49 @@ namespace characters.Items
 {
     abstract class Item
     {
-        private string name;
-        private string equipToSlot;
+        private string itemName;
+        private string itemLevel;
         private string requiredLevel;
-        //Items affect our character Primary Atributes
+        private Slot slot;
+        private string itemSlot;
+        
 
+
+        //Items affect our character Primary Atributes
         private int strength;
         private int dexterity;
         private int intelligence;
 
-        //We have two types of Items : Armor and Weapons so we create an enum and then with propertie we set or get the itemType
-        
-
-       
-
-
-        //We provide properties to acces the 
-        public string Name 
+        //We have two types of Items : Armor and Weapons so we create an enum and then with propertie we set or get the itemType        
+        public enum Slot
         {
-            get { return name; }
-            set { name = value; }
+            Head,
+            Body,
+            Legs,
+            Weapon
+        }
+
+        public Slot ItemSlot
+        { 
+            get { return slot; }
+            set { slot = value; }
+        }
+        
+        //We provide properties to acces the items
+        public string ItemName 
+        {
+            get { return itemName; }
+            set { itemName = value; }
         }
         public string EquipToSlot 
         {
-            get { return equipToSlot; }
-            set { equipToSlot = value; } 
+            get { return itemSlot; }
+            set { itemSlot = value; } 
         }
-        public string RequiredLevel 
+        public string ItemLevel 
         {
-            get { return requiredLevel; }
-            set { requiredLevel = value; } 
+            get { return itemLevel; }
+            set { itemLevel = value; } 
         }
 
         public int Strength        
@@ -55,6 +69,8 @@ namespace characters.Items
             get { return intelligence; }
             set { intelligence = value; } 
         }
+
+
 
     }
 }

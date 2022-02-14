@@ -1,85 +1,61 @@
-﻿using characters.Items;
+﻿using characters.Items.Armor;
 using characters.Items.Weapons;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace characters
 {
     abstract class BaseCharacterClass
     {
-        //All Characters will have this fields        
-        private string characterClass;
-        private Dictionary<Item, Weapon> characterEquipment;
-        private string armor;
-        private string weapon;
-
-        //Stats or the so called primary atributes
-        private int strength;
-        private int dexterity;
-        private int intelligence;
-
-
-        //Using getters and setters so we can set or get this information for all characters        
-        public string CharacterClass
+        public BaseCharacterClass(string name)
         {
-            get { return characterClass; }
-            set { characterClass = value; }
-
+            this.CharacterName = name;
+            this.CharacterLevel = 1;
         }
-        public string CharacterEquipment
-        {
-            get { return characterEquipment; }
-            set { characterEquipment = value; }
-
-        }
-        
-        public string Armor
-        {
-            get { return armor; }
-            set { armor = value; }
-        }
-        public string Weapon
-        {
-            get { return weapon; }
-            set { weapon = value; }
-        }
-        public int Strength
-        {
-            get { return strength; }
-            set { strength = value; }
-        }
-        public int Dexterity
-        {
-            get { return dexterity; }
-            set { dexterity = value; }
-        }
-        public int Intelligence
-        {
-            get { return intelligence; }
-            set { intelligence = value; }
-        }
+        //All Characters will have this fields
+        private Weapon[] characterEquipment = new Weapon[1];
+        private string characterName;
+        private int characterLevel;
+        private double basePrimaryAttributes;
+        private double totalPrimaryAttributes;
+        private string characterClass;      
+        private int strength;      
+        private int dexterity;      
+        private int intelligence;      
 
 
-        //All Characters can equip weapon, equip armor, level up. So we make the methods virtual that way we can customise them for each character
-        //Need to pass Item 
-        public virtual void EquipItem()
-        {
-            //Need to get item properties and add them to the character Primary atributes and also put them in the characterEquipment
-            Console.WriteLine("Armor equiped");
-        }
-        //Using a overload method to equip Items
-        public virtual void EquipItem()
-        {
-            //Need to get item properties and add them to the character Primary atributes and also put them in the characterEquipment
-            Console.WriteLine("Armor equiped");
-        }
-        public virtual void LevelUp()
-        {
-            
-        }
+        //Using getters and setters so we can set or get this information for all characters                                           
+        public string CharacterName { get => characterName; set => characterName = value; }
+        public int CharacterLevel { get => characterLevel; set => characterLevel = value; }
+        public double TotalPrimaryAttributes { get => totalPrimaryAttributes; set => totalPrimaryAttributes = value; }      
+        public double BasePrimaryAttributes { get => basePrimaryAttributes; set => basePrimaryAttributes = value; }
+        public string CharacterClass { get => characterClass; set => characterClass = value; }
+        public int Strength { get => strength; set => strength = value; }
+        public int Dexterity { get => dexterity; set => dexterity = value; }
+        public int Intelligence { get => intelligence; set => intelligence = value; }
+        internal Weapon[] CharacterEquipment { get => characterEquipment; set => characterEquipment = value; }
+
+
+
+
+
+
+
+
+
+
+        //All Characters can equip weapon, equip armor, level up. So we make the methods virtual that way we can customise them for each character        
+
+        /// <summary>
+        /// Method used to equip items
+        /// </summary>
+        public abstract void EquipItem();                      
+        public abstract void EquipItem(Weapon weaponItem);                      
+        /// <summary>
+        /// Method used to levelup the character 
+        /// </summary>
+        public abstract void LevelUp();
+        public abstract void LevelUp(int level);
+       
 
     }
 }

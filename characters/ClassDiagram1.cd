@@ -1,24 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="characters.BaseCharacterClass">
-    <Position X="4" Y="1" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAIACAAEAAgAAAAAAAAAQBCADEAAgAUAAAABAAACA=</HashCode>
+      <HashCode>BAAAIACAAEBAgAgAAAAIAAABAABEAAgAUACABAAAgiA=</HashCode>
       <FileName>Characters\BaseCharacterClass.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="characters.Items.Armor.Armor">
-    <Position X="13.75" Y="6.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\Armor\Armor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="characters.Items.Item">
-    <Position X="12.25" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAMACAAAAAgCAAAAAgAAQAAABEAQAAQAAAAAAAACA=</HashCode>
-      <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="characters.RangerClass">
@@ -50,13 +36,44 @@
     </TypeIdentifier>
   </Class>
   <Class Name="characters.Items.Weapons.Weapon">
-    <Position X="10.75" Y="6.75" Width="1.5" />
+    <Position X="13" Y="6" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
+    <NestedTypes>
+      <Enum Name="characters.Items.Weapons.Weapon.TypeOfWeapons" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Items\Weapon.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAgAAAAAAACAAAAAgAAAAAAAAAAAAAAAAGAAA=</HashCode>
-      <FileName>Items\Weapons\Weapon.cs</FileName>
+      <HashCode>AgAAAAAAgAAAAEAACAAAAAgAAAAAAAAAAAAAIAAGAAA=</HashCode>
+      <FileName>Items\Weapon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="characters.Items.Item">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="characters.Items.Item.Slot" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Items\Item.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAEIACABAAAgCAAAAAAABAAAgBQAAIAQAECAAAAACA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="characters.Items.Armor.Armor">
+    <Position X="10.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Armor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

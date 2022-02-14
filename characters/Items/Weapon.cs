@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace characters.Items.Weapons
 {
-    internal class  Weapon : Item
+    internal class Weapon : Item
     {
         private double attacksPerSeccond;
         private int baseWeaponDamage;
-        private string axes;
-        private string bows;
-        private string daggers;
-        private string hammers;
-        private string staffs;
-        private string swords;
-        private string wands;
-        
-
+        private TypeOfWeapons typeofWeapons;
+        public Weapon(int damage, double attacSpeed)
+        {
+            baseWeaponDamage = damage;
+            attacksPerSeccond = attacSpeed;
+        }
         //Here we set and get the properties of the weapons 
         public double AttacksPerSeccond
         {
@@ -32,32 +29,21 @@ namespace characters.Items.Weapons
         }
 
         //We also set the properties for each wepon
-        public string Axes 
+        public enum TypeOfWeapons
         {
-            get { return axes; }
-            set { axes = value; }
-            
+            Axe,
+            Bow,
+            Dagger,
+            Hammer,
+            Staff,
+            Sword,
+            Wand
         }
-        public string Bows
+        public TypeOfWeapons WeaponType
         {
-            get { return bows; }
-            set { bows = value; }
+            get { return typeofWeapons; }
+            set { typeofWeapons = value; }
         }
-        public string Dagers
-        {
-            get { return daggers; }
-            set { daggers = value; }
-        }
-        public  string Hammers 
-        { 
-            get { return hammers; } 
-            set { hammers = value; } 
-        }
-
-        public string Staffs { get => staffs; set => staffs = value; }
-        public string Swords { get => swords; set => swords = value; }
-        public string Wands { get => wands; set => wands = value; }
-
 
         /// <summary>
         /// Getting the DPS of the used weapon
@@ -68,6 +54,16 @@ namespace characters.Items.Weapons
             double dps = this.BaseWeaponDamage * this.AttacksPerSeccond;
             //needs to return a double of the DPS (Damage * Attack speed)
             return dps; // Example
+        }
+        /// <summary>
+        /// Takes the damage and attacSpeed of the weapon and sets them to the actual weapon
+        /// </summary>
+        /// <param name="damage"></param>
+        /// <param name="attacSpeed"></param>
+        public void WeaponAtributes(int damage, double attacSpeed)
+        {
+            this.BaseWeaponDamage = damage;
+            this.AttacksPerSeccond = attacSpeed;
         }
     }
 }
