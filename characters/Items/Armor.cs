@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace characters.Items.Armor
 {
-    abstract class Armor : Items 
+    abstract class Armor : Item 
     {
         //Constructor 
         public Armor()
