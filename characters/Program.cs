@@ -10,23 +10,24 @@ namespace characters
     {
         static void Main(string[] args)
         {
-            WarriorClass myWarrioir = new WarriorClass("Gosho");
-            MageClass myMage = new MageClass("Pesho");            
             
-            
-            myWarrioir.EquipItem();
+            MageClass myMage = new MageClass("Pesho");
 
-            Weapon testWand = new Weapon(7,1.1)
+
+
+
+            Weapon testWand = new Weapon()
             {
                 ItemName = "Common axe",
-                ItemSlot = Slot.Weapon,
-                WeaponType = TypeOfWeapons.Wand,
-                
-                
+                ItemSlot = Slot.WEAPON,
+                WeaponType = TypeOfWeapons.AXE,
+
+
+
             };
+
+            myMage.EquipWeapon(testWand);
             
-            myMage.EquipItem(testWand);
-            myMage.EquipItem(testWand);
             
         }
 

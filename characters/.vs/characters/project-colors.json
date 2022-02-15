@@ -5,7 +5,12 @@
       "ProjectGuid": "89be85f9-5b5e-4004-9543-b7b1890d607f",
       "DisplayName": "characters",
       "ColorIndex": 0
+    },
+    "5e67d7c6-6a4e-40f3-b905-68ffca652d1d": {
+      "ProjectGuid": "5e67d7c6-6a4e-40f3-b905-68ffca652d1d",
+      "DisplayName": "TestCharactersRPG",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
