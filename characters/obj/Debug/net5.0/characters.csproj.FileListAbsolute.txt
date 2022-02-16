@@ -5,7 +5,6 @@ C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\ch
 C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\characters\bin\Debug\net5.0\characters.dll
 C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\characters\bin\Debug\net5.0\ref\characters.dll
 C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\characters\bin\Debug\net5.0\characters.pdb
-C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\characters\obj\Debug\net5.0\characters.csproj.AssemblyReference.cache
 C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\characters\obj\Debug\net5.0\characters.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\characters\obj\Debug\net5.0\characters.AssemblyInfoInputs.cache
 C:\Users\Petar Petrov\source\repos\C#\RPGCharacters\09.02.2022\RPGCharacters-\characters\obj\Debug\net5.0\characters.AssemblyInfo.cs
