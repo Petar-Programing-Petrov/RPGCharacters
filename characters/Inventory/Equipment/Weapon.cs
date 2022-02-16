@@ -36,12 +36,12 @@ namespace characters.Items.Weapons
         /// Takes the weapon attributes from class WeaponAttributes
         /// </summary>
         /// <returns>A double representing the damage per seccond depending on weapon atributes</returns>
-        public double getDPS(WeaponAttributes weaponAttributes)
+        public double getDPS()
         {
             
             double dps = weaponAttributes.Damage * weaponAttributes.AttackSpeed;
             //needs to return a double of the DPS (Damage * Attack speed)
-            return dps; // Example
+            return Math.Round(dps, 2); // Example
         }
     }
 }

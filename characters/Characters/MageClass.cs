@@ -2,6 +2,7 @@
 using characters.Items.Armor;
 using characters.Items.Weapons;
 using System;
+using System.Text;
 using static characters.Items.Item;
 
 namespace characters
@@ -14,16 +15,12 @@ namespace characters
         {
             CharacterClass = "Mage";
             CharacterName = name;
-            CharacterLevel = 1;
-            Strength = 1;
-            Dexterity = 1;
-            Intelligence = 8;
-            CharacterDamage();
+            
+            PrimaryAttributes.Strength = 1.0;
+            PrimaryAttributes.Dexterity = 1.0;
+            PrimaryAttributes.Intelligence = 8.0;
+            
         }
-
-
-
-        
         public override bool EquipWeapon(Weapon weapon)
         {
             try //Try will return TRUE if weapon is the correct type, level and if its equipped on an empty slot for this character.
@@ -109,31 +106,81 @@ namespace characters
                 return false;
 
             }
-        }
-
-        //When the Mage level's up he gains for every level up +1 Strength, +1 Dexternity and +5 Intelligence
+        }        
         public override void LevelUp()
         {
             Console.WriteLine("Mage leveled up!");
             Console.WriteLine($"Current Mage {this.CharacterName} is at {this.CharacterLevel} lvl.");
-            this.Strength += 1;
-            this.Dexterity += 1;
-            this.Intelligence += 5;
+            PrimaryAttributes.Strength += 1.0;
+            PrimaryAttributes.Dexterity += 1.0;
+            PrimaryAttributes.Intelligence += 5.0;
+            CharacterLevel++;
 
         }
-        public override void BaseStats()
+        public override string BaseStats()
         {
+            StringBuilder defaultAttributes = new StringBuilder();
+            defaultAttributes.Append($"Character Name: {CharacterName}" +
+                $"\nCharacter Level: {CharacterLevel}" +
+                $"\nStrength: {PrimaryAttributes.Strength}" +
+                $"\nDexterity: { PrimaryAttributes.Dexterity}" +
+                $"\nIntelligence: {PrimaryAttributes.Intelligence}");
 
+            return defaultAttributes.ToString();
         }
         
-        public override void CharacterStats()
+        public override string CharacterStats() 
         {
+            StringBuilder result = new StringBuilder();
+            result.Append($"Character Name: {CharacterName}" +
+                $"\nCharacter Level: {CharacterLevel}" +
+                $"\nStrength: {PrimaryAttributes.Strength}" +
+                $"\nDexterity: { PrimaryAttributes.Dexterity}" +
+                $"\nIntelligence: {PrimaryAttributes.Intelligence}" +
+                $"\nCharacter Damage: {CharacterDamage()}");
+            return result.ToString();
+        }       
+        public override double CharacterDamage()
+        {
+            double mageBaseDamage = 1;//Base damage as per assignemnt is 1 without weapon
+            // As per assignmend called basePrimaryAttribute which is depending on Character level and gives bonus to the base Damage which is 1
+            
+            //If Character equips armor  we calculate only the damageBonus for the character
+            if (ArmorInventory.Count > 0)
+            {                
+                //With armor we check every slot and add the Intelligence to the base damage atribute for mage
+                if (ArmorInventory.ContainsKey(Slot.LEGS) == true)
+                {
+                    PrimaryAttributes.Intelligence += ArmorInventory[Slot.LEGS].PrimaryAttributes.Intelligence;
+                }
+                else if(ArmorInventory.ContainsKey(Slot.HEAD) == true)
+                {
+                    PrimaryAttributes.Intelligence += ArmorInventory[Slot.HEAD].PrimaryAttributes.Intelligence;
+                }
+                else if (ArmorInventory.ContainsKey(Slot.BODY) == true)
+                {
+                    PrimaryAttributes.Intelligence += ArmorInventory[Slot.BODY].PrimaryAttributes.Intelligence;
+                }
+                                                          
+            }
+            //If Character equips weapon it only affects the delth damage taking in mind we checked if armor is affecting the damageBonus
+            if (WeaponInventory.ContainsKey(Slot.WEAPON) == true)
+            {
+                double weaponDps = WeaponInventory[Slot.WEAPON].getDPS();
+                double totalCharacterDamage = weaponDps * (mageBaseDamage + PrimaryAttributes.Intelligence / 100);
+                Math.Round(totalCharacterDamage, 2);
+                return totalCharacterDamage;
+            }
+            
+            // No Weapon nor Armor!!! We calculate the base Damage set to 1 as per Assignment instructions in 4.1) under NOTE:, and add the bonus from baseAttributes that depend on level
+            else
+            {
+                double noWeaponDamage = mageBaseDamage * (mageBaseDamage + (PrimaryAttributes.Intelligence / 100));
+                return noWeaponDamage;
+            }
+            
 
-        }
-        public override void CharacterDamage()
-        {
-          //  Weapon equippedWeapon = WeaponInventory[Slot.WEAPON];
-            //
+
 
         }
 

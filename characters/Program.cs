@@ -3,6 +3,9 @@ using characters.Items;
 using System;
 using static characters.Items.Item;
 using static characters.Items.Weapons.Weapon;
+using characters.Inventory.Equipment;
+using characters.Items.Armor;
+using static characters.Items.Armor.Armor;
 
 namespace characters
 {
@@ -10,25 +13,16 @@ namespace characters
     {
         static void Main(string[] args)
         {
-            
-            MageClass myMage = new MageClass("Pesho");
+
+            MageClass mage = new MageClass("Gandalf");
+            Console.WriteLine(mage.CharacterStats());
+            WarriorClass warrior = new WarriorClass("Rambo");
+            WarriorClass warriorWithWeapon = new WarriorClass("Goro");
+            Console.WriteLine(warrior.CharacterStats());
+            RogueClass rogue = new RogueClass("Gustav");
+            Console.WriteLine(rogue.CharacterStats());
 
 
-
-
-            Weapon testWand = new Weapon()
-            {
-                ItemName = "Common axe",
-                ItemSlot = Slot.WEAPON,
-                WeaponType = TypeOfWeapons.WAND,
-
-
-
-            };
-                
-            myMage.EquipWeapon(testWand);
-            
-            
         }
 
     }
