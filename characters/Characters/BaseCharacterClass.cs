@@ -23,8 +23,8 @@ namespace characters
         private int dexterity;      
         private int intelligence;
         private PrimaryAttributes primaryAttributes;
-        private Dictionary<Slot, TypeOfWeapons> weaponInventory = new Dictionary<Slot, TypeOfWeapons>();
-        private Dictionary<Slot, TypeOfArmor> armorInventory = new Dictionary<Slot, TypeOfArmor>();
+        private Dictionary<Slot, Weapon> weaponInventory = new Dictionary<Slot, Weapon>();
+        private Dictionary<Slot, Armor> armorInventory = new Dictionary<Slot, Armor>();
 
 
         //Using getters and setters so we can set or get this information for all characters                                           
@@ -35,8 +35,8 @@ namespace characters
         public int Strength { get => strength; set => strength = value; }
         public int Dexterity { get => dexterity; set => dexterity = value; }
         public int Intelligence { get => intelligence; set => intelligence = value; }              
-        public Dictionary<Slot, TypeOfWeapons> WeaponInventory { get => weaponInventory; set => weaponInventory = value; }
-        public Dictionary<Slot, TypeOfArmor> ArmorInventory { get => armorInventory; set => armorInventory = value; }
+        public Dictionary<Slot, Weapon> WeaponInventory { get => weaponInventory; set => weaponInventory = value; }
+        public Dictionary<Slot, Armor> ArmorInventory { get => armorInventory; set => armorInventory = value; }
         public PrimaryAttributes PrimaryAttributes { get => primaryAttributes; set => primaryAttributes = value; }
 
         //All Characters can equip weapon, equip armor, level up. So we make the methods virtual that way we can customise them for each character        
@@ -52,7 +52,8 @@ namespace characters
         public abstract void LevelUp();
         public abstract bool EquipArmor(Armor armor);
         public abstract void BaseStats();
-        public abstract void TotalStats();
+        public abstract void CharacterStats();
+        public abstract void CharacterDamage();
        
 
     }

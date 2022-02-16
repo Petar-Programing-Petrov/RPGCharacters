@@ -20,12 +20,12 @@ namespace characters
             {
                 ItemName = "Common axe",
                 ItemSlot = Slot.WEAPON,
-                WeaponType = TypeOfWeapons.AXE,
+                WeaponType = TypeOfWeapons.WAND,
 
 
 
             };
-
+                
             myMage.EquipWeapon(testWand);
             
             

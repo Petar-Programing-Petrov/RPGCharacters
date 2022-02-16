@@ -2,6 +2,7 @@
 using characters.Items.Armor;
 using characters.Items.Weapons;
 using System;
+using static characters.Items.Item;
 
 namespace characters
 {
@@ -11,12 +12,13 @@ namespace characters
 
         public MageClass(string name) : base(name)
         {
-            CharacterName = name;
             CharacterClass = "Mage";
+            CharacterName = name;
+            CharacterLevel = 1;
             Strength = 1;
             Dexterity = 1;
             Intelligence = 8;
-            CharacterLevel = 1;
+            CharacterDamage();
         }
 
 
@@ -30,7 +32,7 @@ namespace characters
                 if (weapon.WeaponType == Weapon.TypeOfWeapons.WAND || weapon.WeaponType == Weapon.TypeOfWeapons.STAFF)
                 {
                     //Check if trying to equip weapon to the wrong slot 
-                    if (weapon.ItemSlot != Items.Item.Slot.WEAPON)
+                    if (weapon.ItemSlot != Slot.WEAPON)
                     {
                         throw new InvalidWeaponException($"{CharacterClass} can't equip weapon in the {weapon.ItemSlot} slot!");
                     }
@@ -42,7 +44,7 @@ namespace characters
                     //then we check if the weapon level is lower or equal to charackter beffore equipping it.
                     else if (weapon.ItemLevel <= this.CharacterLevel)
                     {
-                        WeaponInventory.Add(weapon.ItemSlot, weapon.WeaponType);
+                        WeaponInventory.Add(weapon.ItemSlot, weapon);
                         Console.WriteLine($"{weapon.ItemName} was added to your {weapon.ItemSlot}");
                         Console.WriteLine($"{CharacterClass} equiped a {weapon.WeaponType}");
                         // we return true for easyer uniTtest
@@ -85,7 +87,7 @@ namespace characters
                     //then we check if the weapon level is lower or equal to charackter beffore equipping it.
                     else if (armor.ItemLevel <= this.CharacterLevel)
                     {
-                        ArmorInventory.Add(armor.ItemSlot, armor.ArmorType);
+                        ArmorInventory.Add(armor.ItemSlot, armor);
                         Console.WriteLine($"{armor.ItemName} was added to your {armor.ItemSlot}");
                         Console.WriteLine($"{CharacterClass} equiped a {armor.ArmorType}");
                         // we return true for easyer uniTtest
@@ -113,7 +115,7 @@ namespace characters
         public override void LevelUp()
         {
             Console.WriteLine("Mage leveled up!");
-            Console.WriteLine($"Current Mage {this.CharacterName} is at {this.CharacterLevel}lvl.");
+            Console.WriteLine($"Current Mage {this.CharacterName} is at {this.CharacterLevel} lvl.");
             this.Strength += 1;
             this.Dexterity += 1;
             this.Intelligence += 5;
@@ -123,8 +125,15 @@ namespace characters
         {
 
         }
-        public override void TotalStats()
+        
+        public override void CharacterStats()
         {
+
+        }
+        public override void CharacterDamage()
+        {
+          //  Weapon equippedWeapon = WeaponInventory[Slot.WEAPON];
+            //
 
         }
 
